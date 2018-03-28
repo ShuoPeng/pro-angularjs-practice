@@ -19,6 +19,8 @@
   "homepage": "https://github.com/ShuoPeng/pro-angularjs-practice#readme",
   "dependencies": {
     "angular": "^1.6.9",
+    "angular-resource": "^1.6.9",
+    "angular-route": "^1.6.9",
     "bootstrap": "3.2.0"
   },
   "devDependencies": {
