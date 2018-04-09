@@ -2,7 +2,7 @@ angular.module("sportsStore")
 			 .constant("productListActiveClass", "btn-primary")
 			 .constant("productListPageCount", 3)
 			 .controller("productListCtrl", function($scope, $filter, 
-			 	productListActiveClass, productListPageCount){
+			 	productListActiveClass, productListPageCount, cart){
 					
 					// 注意这里的变量是私有的，而不是scope的，所以不被data binding。此处利用了闭包
 					var selectedCategory = null;
@@ -30,5 +30,9 @@ angular.module("sportsStore")
 
 					$scope.getPageClass = function(page){
 						return $scope.selectedPage == page ? productListActiveClass : "";
+					}
+
+					$scope.addProductToCart = function(product) {
+						cart.addProduct(product.id, product.name, product.price);
 					}
 			 });
